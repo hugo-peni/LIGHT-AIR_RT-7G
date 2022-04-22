@@ -56,7 +56,7 @@ analogWriteResolution(8);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+ 
   PREV_STATE_PINK = STATE_PINK;
   STATE_PINK = digitalRead(PUSH_PINK);
   PREV_STATE_GREEN = STATE_GREEN;
@@ -65,12 +65,6 @@ void loop() {
   
     if(PREV_STATE_PINK && !STATE_PINK){
       EN_LIGHT = !EN_LIGHT;
-      /*if(!EN_LIGHT){
-        LIGHT_AUTH = 0;
-      }
-      else{
-        LIGHT_AUTH = 1;
-      }*/
       LIGHT_AUTH = !LIGHT_AUTH;
       T1 = 0;
       POWER_LIGHT();
@@ -78,12 +72,6 @@ void loop() {
 
     if(PREV_STATE_GREEN && !STATE_GREEN){
       EN_BUBBLE = !EN_BUBBLE;
-      /*if(!EN_BUBBLE){
-        BUBBLE_AUTH = 0;
-      }
-      else{
-        BUBBLE_AUTH = 1;
-      }*/
       BUBBLE_AUTH = !BUBBLE_AUTH;
       T2 = 0;
       POWER_BUBBLE();
